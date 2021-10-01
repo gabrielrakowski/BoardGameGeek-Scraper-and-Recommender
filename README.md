@@ -1,5 +1,16 @@
 # BoardGameGeek Scraper and Recommender - README
 
+### Necessary packages
+
+In order to run the scripts and notebook you will need to have installed the following python packages to your environment:
+- jupyter
+- numpy
+- pandas
+- scikit-learn
+- requests
+- beautifulsoup4
+- selenium
+
 ### bgg_title_scraper.py
 
 This should be run first.
@@ -31,6 +42,6 @@ The data for each game is appended to a dataframe, which is then written to a .c
 
 ### Board Game Recommender.ipynb
 
-After you have collected the data, you can run this.
+After you have collected the data, you can run this. In order to use the recommender, run every cell in the notebook but the last. Then in the final cell, change the string parameter inside the function to the title of the game which you would like to receive recommendations based on.
 
 The majority of the notebook is cleaning the data. It then uses a CountVectorizer and cosine similarity to recommend games based on designers, categories and mechanics. The player counts are used to ensure compatibility (if someone asks for recommendations based on a game which has a maximum player count of 3, it is not a good idea to recommend a game which requires a minimum of 4 players). The reimplementation data is used as a basic way to prevent effectively the same game being recommended (e.g. Carcassonne -> Carcassonne: Winter Edition.)
